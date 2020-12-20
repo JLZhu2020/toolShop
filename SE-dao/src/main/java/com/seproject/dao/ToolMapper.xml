@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seproject.dao.ToolMapper">
+    <select id="find" resultType="com.seproject.entities.Tool" parameterType="java.lang.String">
+        select * from tools where item=#{item}
+    </select>
+    <select id="findAll" resultType="com.seproject.entities.Tool">
+        select * from tools
+    </select>
+    <select id="top5" resultType="com.seproject.entities.Tool">
+        select * from tools order by salevolume desc limit 5
+    </select>
+    <insert id="insert" parameterType="com.seproject.entities.Tool">
+        insert into tools values(#{item},#{model},#{rate},#{salevolume})
+    </insert>
+</mapper>

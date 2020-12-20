@@ -1,0 +1,62 @@
+body {
+    font-family: "Arial", sans-serif
+}
+.navMenu {
+    height: 30px;
+    padding: 20px 18px 18px;
+    color: #ffffff!important;
+    background-color: #425bd8!important;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.navItem {
+    color: #ffffff!important;
+    padding: 12px 16px!important;
+    line-height: 1.5;
+    
+}
+.navItem:hover{
+    color: #ffffff!important;
+    background-color: #253582!important;
+}
+.container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.formNav {
+    text-align: center;
+    margin-top: 40px;
+}
+.formNav .button-large {
+    color: #ffffff!important;
+    background-color: #425bd8!important;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 15px 30px 15px;
+    border: none;
+}
+.formNav .button-large:hover {
+    color: #ffffff!important;
+    background-color: #253582!important;
+    cursor: pointer;
+}
+.team {
+    margin-top: 72px;
+    text-align: center;
+}
+
+textarea, input {
+    width:300px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.terms-conditions {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.signature {
+    padding: 10px;
+}

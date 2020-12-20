@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.seproject.dao.CartMapper">
+
+    <select id="findAll" resultType="com.seproject.entities.CartItem" parameterType="java.lang.String">
+        select tools.item item, tools.model model, tools.rate rate, cart.amount, amount
+        from cart inner join tools on cart.item=tools.item
+        where username=#{username}
+    </select>
+
+    <select id="exist" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(*) from cart where username=#{username} and item=#{item}
+    </select>
+
+    <update id="changeAmount" parameterType="com.seproject.entities.CartRecord">
+        update cart set amount=amount+#{amount}
+        where username=#{username} and item=#{item}
+    </update>
+
+    <insert id="newItem" parameterType="com.seproject.entities.CartRecord">
+        insert into cart values(#{username},#{item},#{amount})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.String">
+        delete from cart where username=#{username} and item=#{item}
+    </delete>
+
+    <delete id="empty" parameterType="java.lang.String">
+        delete from cart where username=#{username}
+    </delete>
+</mapper>
